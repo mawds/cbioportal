@@ -15,7 +15,8 @@ The portal requires two properties files:  one for global configuration (`portal
     cp portal.properties.EXAMPLE portal.properties
     cp log4j.properties.EXAMPLE log4j.properties
 
-For more information about the `portal.properties` file, see the following [reference](portal.properties-Reference.md) page.
+For more information about the `portal.properties` file, see the following [reference](portal.properties-Reference.md) page.  You will need to set the sql password in `portal.properties` once the 
+MySQL databases and user have been created.
 
 ## Prepare the log4j.properties File
 
@@ -23,6 +24,7 @@ Update the following lines with paths that make sense for your local system.
 
     log4j.appender.a.rollingPolicy.FileNamePattern = /srv/www/sander-tomcat/tomcat6/logs/public-portal.log.%d.gz
     log4j.appender.a.File = /srv/www/sander-tomcat/tomcat6/logs/public-portal.log
+
 
 ## Create the cBioPortal MySQL Databases and User
 
@@ -72,6 +74,10 @@ A sample file is shown below:
         </server>
       </servers>
     </settings>
+
+## Prepare the portal.properties File
+
+Update the mysql password in the portal.properties file in `source/main/resources`
 
 ## Set the PORTAL_HOME Variable
 
